@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Layout</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Ink & India</div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="theme-toggle" onclick="document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark'">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Welcome to India without politics</h1>
+            <p>Discover fresh perspectives, insightful stories, and modern ideas in our curated collection of articles.</p>
+        </section>
+
+        <section class="blog-grid">
+            <article class="blog-card">
+                <img src="/img/tech.png" alt="Tech blog image">
+                <div class="blog-card-content">
+                    <h2>Exploring the Future of Tech</h2>
+                    <p>A deep dive into emerging technologies shaping our world, from AI to quantum computing.</p>
+                    <span class="date">May 10, 2025</span>
+                </div>
+            </article>
+            <article class="blog-card">
+                <img src="/img/lifestyle.jpg" alt="Lifestyle blog image">
+                <div class="blog-card-content">
+                    <h2>Minimalist Lifestyle Tips</h2>
+                    <p>How to simplify your life and focus on what matters most in a cluttered world.</p>
+                    <span class="date">May 8, 2025</span>
+                </div>
+            </article>
+            <article class="blog-card">
+                <img src="/img/story.jpg" alt="Storytelling blog image">
+                <div class="blog-card-content">
+                    <h2>The Art of Storytelling</h2>
+                    <p>Learn how to craft compelling narratives that captivate and inspire your audience.</p>
+                    <span class="date">May 5, 2025</span>
+                </div>
+            </article>
+            <article class="blog-card">
+                <img src="/img/gems.webp" alt="Travel blog image">
+                <div class="blog-card-content">
+                    <h2>Hidden Gems of India</h2>
+                    <p>Uncover lesser-known destinations for your next adventure across the continent.</p>
+                    <span class="date">May 3, 2025</span>
+                </div>
+            </article>
+            <article class="blog-card">
+                <img src="/img/culinry.jpg" alt="Food blog image">
+                <div class="blog-card-content">
+                    <h2>Global Culinary Journey</h2>
+                    <p>Explore flavors from around the world with these must-try dishes and recipes.</p>
+                    <span class="date">May 1, 2025</span>
+                </div>
+            </article>
+            <article class="blog-card">
+                <img src="/img/produ.png" alt="Productivity blog image">
+                <div class="blog-card-content">
+                    <h2>Boost Your Productivity</h2>
+                    <p>Practical strategies to optimize your workflow and achieve your goals efficiently.</p>
+                    <span class="date">April 28, 2025</span>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Ink & India . All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

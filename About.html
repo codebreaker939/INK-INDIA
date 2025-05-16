@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Ink & India</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .about-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .about-header h1 {
+            font-size: 2.5rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+
+        .about-content {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+        }
+
+        .mission-section {
+            margin-bottom: 40px;
+        }
+
+        .mission-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .team-section {
+            margin-top: 60px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 20px;
+            background: var(--bg-color);
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        .team-member h3 {
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+
+        .team-member p {
+            color: var(--text-color);
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .values-section {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .value-card {
+            padding: 20px;
+            background: var(--bg-color);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .value-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                padding: 20px;
+            }
+
+            .about-header h1 {
+                font-size: 2rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span>Ink & India</span>
+                </div>
+                <div class="search-bar">
+                    <input type="search" placeholder="Search stories...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Categories <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="categories.html#technology"><i class="fas fa-laptop-code"></i> Technology</a></li>
+                                <li><a href="categories.html#arts"><i class="fas fa-paint-brush"></i> Arts & Culture</a></li>
+                                <li><a href="categories.html#travel"><i class="fas fa-compass"></i> Travel</a></li>
+                                <li><a href="categories.html#lifestyle"><i class="fas fa-leaf"></i> Lifestyle</a></li>
+                                <li><a href="categories.html#food"><i class="fas fa-utensils"></i> Food</a></li>
+                                <li><a href="categories.html#literature"><i class="fas fa-book"></i> Literature</a></li>
+                                <li><a href="categories.html#heritage"><i class="fas fa-landmark"></i> Heritage</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="theme-toggle" onclick="document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark'">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="about-container">
+        <div class="about-header">
+            <h1>About Ink & India</h1>
+            <p>Discovering and sharing the untold stories of India</p>
+        </div>
+
+        <div class="about-content">
+            <div class="mission-section">
+                <h2>Our Mission</h2>
+                <p>At Ink & India, we believe in the power of storytelling to bridge cultures, preserve heritage, and inspire change. Our mission is to uncover and share the diverse narratives that make India unique, focusing on the stories that often go untold in mainstream media.</p>
+            </div>
+
+            <div class="values-section">
+                <div class="value-card">
+                    <i class="fas fa-pen-fancy"></i>
+                    <h3>Authenticity</h3>
+                    <p>We commit to genuine, well-researched storytelling that respects cultural nuances.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-globe-asia"></i>
+                    <h3>Diversity</h3>
+                    <p>We celebrate the rich tapestry of Indian cultures, traditions, and perspectives.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Innovation</h3>
+                    <p>We embrace modern storytelling techniques while honoring traditional narratives.</p>
+                </div>
+            </div>
+
+            <div class="team-section">
+                <h2>Our Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="/img/team/editor.jpg" alt="Editor">
+                        <h3>Adarsh Deshmukh</h3>
+                        <p>Founder & Editor-in-Chief</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="/img/team/writer.jpg" alt="Writer">
+                        <h3>Priya Sharma</h3>
+                        <p>Senior Writer</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="/img/team/photographer.jpg" alt="Photographer">
+                        <h3>Raj Patel</h3>
+                        <p>Lead Photographer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Ink & India</h3>
+                    <p>Celebrating the spirit of India through stories</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Ink & India. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - Ink & India</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .categories-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .categories-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .categories-header h1 {
+            font-size: 2.5rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+
+        .category-section {
+            margin-bottom: 60px;
+            scroll-margin-top: 100px;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .category-header i {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .category-header h2 {
+            font-size: 2rem;
+            color: var(--text-color);
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .article-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .article-card:hover .article-image img {
+            transform: scale(1.05);
+        }
+
+        .article-content {
+            padding: 20px;
+        }
+
+        .article-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .article-date {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.7;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .categories-header h1 {
+                font-size: 2rem;
+            }
+
+            .category-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span>Ink & India</span>
+                </div>
+                <div class="search-bar">
+                    <input type="search" placeholder="Search stories...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Categories <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#technology"><i class="fas fa-laptop-code"></i> Technology</a></li>
+                                <li><a href="#arts"><i class="fas fa-paint-brush"></i> Arts & Culture</a></li>
+                                <li><a href="#travel"><i class="fas fa-compass"></i> Travel</a></li>
+                                <li><a href="#lifestyle"><i class="fas fa-leaf"></i> Lifestyle</a></li>
+                                <li><a href="#food"><i class="fas fa-utensils"></i> Food</a></li>
+                                <li><a href="#literature"><i class="fas fa-book"></i> Literature</a></li>
+                                <li><a href="#heritage"><i class="fas fa-landmark"></i> Heritage</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </nav>
+                <button class="theme-toggle" onclick="document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark'">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="categories-container">
+        <div class="categories-header">
+            <h1>Explore Our Categories</h1>
+            <p>Dive deep into stories across various aspects of Indian life and culture</p>
+        </div>
+
+        <section id="technology" class="category-section">
+            <div class="category-header">
+                <i class="fas fa-laptop-code"></i>
+                <h2>Technology</h2>
+            </div>
+            <div class="articles-grid">
+                <!-- Technology Articles -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="/img/tech/tech1.jpg" alt="Tech Innovation">
+                    </div>
+                    <div class="article-content">
+                        <h3>The Rise of Indian Tech Startups</h3>
+                        <p>How Indian entrepreneurs are reshaping the global tech landscape.</p>
+                        <div class="article-meta">
+                            <span class="article-date">May 15, 2025</span>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <!-- Add more articles -->
+            </div>
+        </section>
+
+        <section id="arts" class="category-section">
+            <div class="category-header">
+                <i class="fas fa-paint-brush"></i>
+                <h2>Arts & Culture</h2>
+            </div>
+            <div class="articles-grid">
+                <!-- Arts & Culture Articles -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="/img/arts/arts1.jpg" alt="Indian Art">
+                    </div>
+                    <div class="article-content">
+                        <h3>Contemporary Indian Art Scene</h3>
+                        <p>Exploring the evolution of Indian art in the modern era.</p>
+                        <div class="article-meta">
+                            <span class="article-date">May 12, 2025</span>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <!-- Add more articles -->
+            </div>
+        </section>
+
+        <!-- Add more category sections following the same pattern -->
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Ink & India</h3>
+                    <p>Celebrating the spirit of India through stories</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#" onclick="window.location.href='contact.html'">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Ink & India. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

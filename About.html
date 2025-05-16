@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .about-container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 50px auto;
             padding: 0 20px;
+            position: relative;
         }
 
         .about-header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 80px;
         }
 
         .about-header h1 {
@@ -24,96 +25,253 @@
             margin-bottom: 20px;
         }
 
-        .about-content {
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            margin-bottom: 60px;
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .timeline-content {
+            width: 45%;
             background: var(--card-bg);
-            padding: 40px;
+            padding: 30px;
             border-radius: 16px;
             box-shadow: var(--shadow);
+            position: relative;
+            transition: transform 0.3s ease;
+            will-change: transform;
         }
 
-        .mission-section {
-            margin-bottom: 40px;
+        .timeline-content:hover {
+            transform: translateY(-5px);
         }
 
-        .mission-section h2 {
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: auto;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -60px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -60px;
+        }
+
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: var(--primary-color);
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            right: -40px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            left: -40px;
+        }
+
+        .timeline-content h2 {
             color: var(--primary-color);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-size: 1.8rem;
         }
 
+        .timeline-content p {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
         .team-section {
-            margin-top: 60px;
+            margin-top: 120px;
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .team-section h2 {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .team-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
         }
 
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+            padding: 20px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .team-member {
-            text-align: center;
-            padding: 20px;
             background: var(--bg-color);
-            border-radius: 12px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
             transition: transform 0.3s ease;
+            will-change: transform;
         }
 
         .team-member:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+        }
+
+        .photo-container {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 30px;
+            padding: 10px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            border-radius: 20px;
+            transform: rotate(45deg);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .photo-container::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            background: var(--bg-color);
+            border-radius: 15px;
         }
 
         .team-member img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin-bottom: 15px;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
+            border-radius: 15px;
+            transform: rotate(-45deg) scale(1.4);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover img {
+            transform: rotate(-45deg) scale(1.5);
         }
 
         .team-member h3 {
             color: var(--text-color);
-            margin-bottom: 10px;
+            font-size: 1.6rem;
+            margin: 20px 0 10px;
         }
 
         .team-member p {
             color: var(--text-color);
             opacity: 0.8;
-            font-size: 0.9rem;
-        }
-
-        .values-section {
-            margin-top: 40px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .value-card {
-            padding: 20px;
-            background: var(--bg-color);
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .value-card i {
-            font-size: 2rem;
-            color: var(--primary-color);
+            font-size: 1.1rem;
             margin-bottom: 15px;
         }
 
+        .team-member .social-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .team-member .social-links a {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .team-member .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
         @media (max-width: 768px) {
-            .about-content {
-                padding: 20px;
+            .timeline::before {
+                left: 30px;
             }
 
-            .about-header h1 {
-                font-size: 2rem;
+            .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 80px !important;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content::before,
+            .timeline-item:nth-child(even) .timeline-content::before {
+                left: -50px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content::after,
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: -30px;
+                width: 30px;
             }
 
             .team-grid {
                 grid-template-columns: 1fr;
+                padding: 10px;
+            }
+
+            .photo-container {
+                width: 180px;
+                height: 180px;
+            }
+
+            .team-section h2 {
+                font-size: 2.2rem;
             }
         }
     </style>
@@ -122,9 +280,9 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">
+                <a href="index.html" class="logo">
                     <span>Ink & India</span>
-                </div>
+                </a>
                 <div class="search-bar">
                     <input type="search" placeholder="Search stories...">
                     <button type="submit"><i class="fas fa-search"></i></button>
@@ -145,11 +303,10 @@
                             </ul>
                         </li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
                 <button class="theme-toggle" onclick="document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark'">
-                    <i class="fas fa-moon"></i>
+                    🌙
                 </button>
             </div>
         </div>
@@ -157,51 +314,65 @@
 
     <main class="about-container">
         <div class="about-header">
-            <h1>About Ink & India</h1>
+            <h1>Our Journey</h1>
             <p>Discovering and sharing the untold stories of India</p>
         </div>
 
-        <div class="about-content">
-            <div class="mission-section">
-                <h2>Our Mission</h2>
-                <p>At Ink & India, we believe in the power of storytelling to bridge cultures, preserve heritage, and inspire change. Our mission is to uncover and share the diverse narratives that make India unique, focusing on the stories that often go untold in mainstream media.</p>
-            </div>
-
-            <div class="values-section">
-                <div class="value-card">
-                    <i class="fas fa-pen-fancy"></i>
-                    <h3>Authenticity</h3>
-                    <p>We commit to genuine, well-researched storytelling that respects cultural nuances.</p>
-                </div>
-                <div class="value-card">
-                    <i class="fas fa-globe-asia"></i>
-                    <h3>Diversity</h3>
-                    <p>We celebrate the rich tapestry of Indian cultures, traditions, and perspectives.</p>
-                </div>
-                <div class="value-card">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>Innovation</h3>
-                    <p>We embrace modern storytelling techniques while honoring traditional narratives.</p>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2>Our Mission</h2>
+                    <p>At Ink & India, we believe in the power of storytelling to bridge cultures, preserve heritage, and inspire change. Our mission is to uncover and share the diverse narratives that make India unique.</p>
                 </div>
             </div>
 
-            <div class="team-section">
-                <h2>Our Team</h2>
-                <div class="team-grid">
-                    <div class="team-member">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2>Authenticity</h2>
+                    <p>We commit to genuine, well-researched storytelling that respects cultural nuances and traditions. Every story we tell is carefully crafted to preserve its authentic essence.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2>Diversity</h2>
+                    <p>We celebrate the rich tapestry of Indian cultures, traditions, and perspectives. Our platform showcases stories from every corner of India, giving voice to unique narratives.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2>Innovation</h2>
+                    <p>We embrace modern storytelling techniques while honoring traditional narratives, creating a perfect blend of the old and the new in our digital storytelling approach.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <h2>Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="photo-container">
                         <img src="/img/team/editor.jpg" alt="Editor">
-                        <h3>Adarsh Deshmukh</h3>
-                        <p>Founder & Editor-in-Chief</p>
                     </div>
-                    <div class="team-member">
-                        <img src="/img/team/writer.jpg" alt="Writer">
-                        <h3>Priya Sharma</h3>
-                        <p>Senior Writer</p>
+                    <h3>Adarsh Deshmukh</h3>
+                    <p>Founder & Editor-in-Chief</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
-                    <div class="team-member">
-                        <img src="/img/team/photographer.jpg" alt="Photographer">
-                        <h3>Raj Patel</h3>
-                        <p>Lead Photographer</p>
+                </div>
+                <div class="team-member">
+                    <div class="photo-container">
+                        <img src="/img/team/writer.jpg" alt="Editor">
+                    </div>
+                    <h3>Aniket Rai</h3>
+                    <p>Founder & Editor-in-Chief</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
